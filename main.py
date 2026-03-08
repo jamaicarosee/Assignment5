@@ -33,7 +33,7 @@ if page == "Home":
 
     st.success("Go to the User Information page first before using the recommender!")
 
-    st.info("Tip: Makeup should enhance your natural beauty ✨")
+    st.info("Tip: Makeup should enhance your natural beauty.")
 
     st.warning("Always check if the product is safe for your skin.")
 
@@ -68,7 +68,7 @@ elif page == "User Information":
     st.write("Today's date:", datetime.date.today())
 
     if st.button("Save Profile"):
-        st.success(f"Profile saved! Welcome, {name} 💄")
+        st.success(f"Profile saved! Welcome, {name}!")
 
 # RECOMMENDER PAGE
 elif page == "Make-App Recommender":
@@ -180,7 +180,7 @@ elif page == "Beauty Quiz":
 # ABOUT PAGE
 elif page == "About":
 
-    st.header("About This App")
+    st.header("ℹ️ About This App")
 
     st.write("**App Name:** Make-App – Beauty Routine Recommender")
 
@@ -208,4 +208,4 @@ elif page == "About":
     - Beauty quiz results
     """)
 
-    st.caption("Created as a project in ITP222💄")
+    st.caption("Created as a project in ITP222")
