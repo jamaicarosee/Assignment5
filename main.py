@@ -2,27 +2,22 @@ import streamlit as st
 import pandas as pd
 import datetime
 
-st.set_page_config(
-    page_title="GlowGuide Makeup App",
-    page_icon="m-app_icon.jpg",
-    layout="wide"
-)
+st.set_page_config(page_title="GlowGuide Makeup App", page_icon="app_icon.jpg", layout="wide")
 
 # SIDEBAR
-st.sidebar.title("💄 Make-App Navigation")
-page = st.sidebar.radio("Go to:", ["Home", "Makeup Recommender", "Beauty Quiz", "About"])
+st.sidebar.title("💄 GlowGuide Navigation")
 
-st.sidebar.header("User Profile")
-name = st.sidebar.text_input("Enter your name")
-age = st.sidebar.number_input("Age", 15, 50, 20)
-experience = st.sidebar.selectbox("Makeup Experience", ["Beginner", "Intermediate", "Advanced"])
-st.sidebar.write("Today's date:", datetime.date.today())
+# Dropdown menu with new order
+page = st.sidebar.selectbox(
+    "Menu",
+    ["Home", "User Information", "Makeup Recommender", "Beauty Quiz", "About"]
+)
 
 # HOME PAGE
 if page == "Home":
 
-    st.title("💄 Make-App – Beauty Routine Recommender")
-    st.header("Welcome to the Make-App!")
+    st.title("💄 GlowGuide – Makeup Routine Recommender")
+    st.header("Welcome to the Beauty App!")
 
     st.image("home_icon.jpg", width=500)
 
@@ -32,11 +27,44 @@ if page == "Home":
     on their skin type and occasion.
     """)
 
-    st.success("Use the sidebar to try the Makeup Recommender!")
+    st.success("Go to the User Information page first before using the recommender!")
 
     st.info("Tip: Makeup should enhance your natural beauty ✨")
 
     st.warning("Always check if the product is safe for your skin.")
+
+# USER INFORMATION PAGE (2nd page now)
+elif page == "User Information":
+
+    st.header("👤 User Profile")
+
+    name = st.text_input("Enter your name")
+    age = st.number_input("Age", 15, 50, 20)
+
+    experience = st.selectbox(
+        "Makeup Experience",
+        ["Beginner", "Intermediate", "Advanced"]
+    )
+
+    skin_type = st.selectbox(
+        "Skin Type",
+        ["Oily", "Dry", "Combination", "Sensitive"]
+    )
+
+    skin_tone = st.selectbox(
+        "Skin Tone",
+        ["Fair", "Light", "Medium", "Morena", "Deep"]
+    )
+
+    favorite_product = st.multiselect(
+        "Favorite Makeup Products",
+        ["Lipstick", "Foundation", "Blush", "Mascara", "Highlighter"]
+    )
+
+    st.write("Today's date:", datetime.date.today())
+
+    if st.button("Save Profile"):
+        st.success(f"Profile saved! Welcome, {name} 💄")
 
 # RECOMMENDER PAGE
 elif page == "Makeup Recommender":
@@ -150,39 +178,30 @@ elif page == "About":
 
     st.header("About This App")
 
-    st.write("""
-    **App Name:** GlowGuide – Makeup Routine Recommender
-    """)
+    st.write("**App Name:** GlowGuide – Makeup Routine Recommender")
 
     st.subheader("What the app does")
     st.write("""
     This app helps users choose a makeup look based on their skin type,
-    skin tone, occasion, and makeup preferences. It gives simple makeup
-    routine suggestions that are beginner-friendly.
+    skin tone, occasion, and makeup preferences.
     """)
 
     st.subheader("Target Users")
     st.write("""
-    The target users of this app are students, beginners, and people who
-    are interested in learning simple makeup routines.
+    Students, beginners, and people interested in simple makeup routines.
     """)
 
     st.subheader("Inputs Collected")
     st.write("""
-    - Name and age
-    - Skin type
-    - Skin tone
-    - Occasion
-    - Makeup coverage preference
-    - Favorite lipstick color
-    - Makeup products used
+    - User profile information
+    - Skin type and skin tone
+    - Occasion and makeup preferences
     """)
 
     st.subheader("Outputs Shown")
     st.write("""
-    - Recommended makeup look
-    - Makeup routine suggestions
+    - Suggested makeup looks
     - Beauty quiz results
     """)
 
-    st.caption("Created as a Streamlit UI project for a college class 💄")
+    st.caption("Created as a Streamlit UI project 💄")
