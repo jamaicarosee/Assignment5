@@ -2,10 +2,14 @@ import streamlit as st
 import pandas as pd
 import datetime
 
-st.set_page_config(page_title="GlowGuide Makeup App", page_icon="💄", layout="wide")
+st.set_page_config(
+    page_title="GlowGuide Makeup App",
+    page_icon="m-app_icon.jpg",
+    layout="wide"
+)
 
 # SIDEBAR
-st.sidebar.title("💄 GlowGuide Navigation")
+st.sidebar.title("💄 Make-App Navigation")
 page = st.sidebar.radio("Go to:", ["Home", "Makeup Recommender", "Beauty Quiz", "About"])
 
 st.sidebar.header("User Profile")
@@ -17,10 +21,10 @@ st.sidebar.write("Today's date:", datetime.date.today())
 # HOME PAGE
 if page == "Home":
 
-    st.title("💄 GlowGuide – Makeup Routine Recommender")
-    st.header("Welcome to the Beauty App!")
+    st.title("💄 Make-App – Beauty Routine Recommender")
+    st.header("Welcome to the Make-App!")
 
-    st.image("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9", width=500)
+    st.image("home_icon.jpg", width=500)
 
     st.write("""
     Hi! I'm a second year college student who loves makeup and beauty products.  
