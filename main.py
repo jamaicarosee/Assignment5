@@ -14,7 +14,7 @@ st.sidebar.image("app_icon.png", width=100)
 # Dropdown menu with new order
 page = st.sidebar.selectbox(
     "Menu",
-    ["Home", "User Information", "Makeup Recommender", "Beauty Quiz", "About"]
+    ["Home", "User Information", "Make-App Recommender", "Beauty Quiz", "About"]
 )
 
 # HOME PAGE
@@ -181,7 +181,7 @@ elif page == "Beauty Quiz":
 elif page == "About":
 
     st.header("ℹ️ About This App")
-
+    
     st.write("**App Name:** Make-App – Beauty Routine Recommender")
 
     st.subheader("What the app does")
