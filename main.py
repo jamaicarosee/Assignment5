@@ -4,13 +4,12 @@ import datetime
 
 st.set_page_config(
     page_title="Make-App",
-    page_icon="app_icon.jpg",
+    page_icon="app_icon.png",
     layout="wide"
 )
 
 # SIDEBAR
-st.sidebar.image("app_icon.jpg", width=120)
-st.sidebar.title("Make-App Navigation")
+st.sidebar.image("app_icon.png", width=100) 
 
 # Dropdown menu with new order
 page = st.sidebar.selectbox(
