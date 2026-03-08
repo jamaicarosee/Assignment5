@@ -2,10 +2,11 @@ import streamlit as st
 import pandas as pd
 import datetime
 
-st.set_page_config(page_title="GlowGuide Makeup App", page_icon="app_icon.jpg", layout="wide")
+st.set_page_config(page_title="Make-App")
+st.logo ("app_icon.jpg")
 
 # SIDEBAR
-st.sidebar.title("💄 GlowGuide Navigation")
+st.sidebar.title("💄 Make-App Navigation")
 
 # Dropdown menu with new order
 page = st.sidebar.selectbox(
@@ -16,13 +17,13 @@ page = st.sidebar.selectbox(
 # HOME PAGE
 if page == "Home":
 
-    st.title("💄 GlowGuide – Makeup Routine Recommender")
-    st.header("Welcome to the Beauty App!")
+    st.title("💄 Make-App – Beauty Routine Recommender")
+    st.header("Welcome to the Make-App!")
 
     st.image("home_icon.jpg", width=500)
 
     st.write("""
-    Hi! I'm a second year college student who loves makeup and beauty products.  
+    Hi! I'm a Jamaica Madriaga, a college student who loves makeup and beauty products.  
     I created this simple Streamlit app to help people choose makeup styles depending
     on their skin type and occasion.
     """)
@@ -67,7 +68,7 @@ elif page == "User Information":
         st.success(f"Profile saved! Welcome, {name} 💄")
 
 # RECOMMENDER PAGE
-elif page == "Makeup Recommender":
+elif page == "Make-App Recommender":
 
     st.header("💄 Find Your Makeup Look")
 
@@ -112,7 +113,7 @@ elif page == "Makeup Recommender":
 
     rating = st.slider("How much do you love makeup?", 1, 10)
 
-    if st.button("Generate Makeup Recommendation 💄"):
+    if st.button("Generate Make-App Recommendation 💄"):
 
         st.subheader("Your Suggested Look")
 
@@ -178,7 +179,7 @@ elif page == "About":
 
     st.header("About This App")
 
-    st.write("**App Name:** GlowGuide – Makeup Routine Recommender")
+    st.write("**App Name:** Make-App – Beauty Routine Recommender")
 
     st.subheader("What the app does")
     st.write("""
@@ -204,4 +205,4 @@ elif page == "About":
     - Beauty quiz results
     """)
 
-    st.caption("Created as a Streamlit UI project 💄")
+    st.caption("Created as a project in ITP222💄")
